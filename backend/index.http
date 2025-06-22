@@ -1,0 +1,44 @@
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "username": "userid100",
+  "password": "3ed4124"
+}
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "mypassword"
+}
+
+###Post for medican
+### Add a medication (Requires JWT token)
+POST http://localhost:3000/medications
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTA1OTE4NjksImV4cCI6MTc1MTg4Nzg2OX0.Rft1tZnCw2sdQTWSm5RFbv9doJ5Uh8RLtGbz-iibLwU
+
+{
+  "name": "Paracetamol",
+  "dosage": "650 mg",
+  "frequency": "Twice a day"
+}
+
+### Get all medications for the logged-in user
+GET http://localhost:3000/medications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTA1ODEzMTgsImV4cCI6MTc1MTg3NzMxOH0.JutA-K9gOxQ6ZHd47501jzNcJdzLcvbfCNGhmauQQLE
+
+0
+###
+### Mark a specific medication as taken
+PUT http://localhost:3000/medications/1/taken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiamFuYW5pIiwiaWF0IjoxNzUwNjA5MDc5LCJleHAiOjE3NTE5MDUwNzl9.dFFEhbVLM4KWjoFeEZFv2-wouVnhJiNvcT2YGvtTLmk
+Content-Type: application/json
+
+
+### Get adherence percentage
+GET http://localhost:3000/adherence
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiamFuYW5pIiwiaWF0IjoxNzUwNjA5MDc5LCJleHAiOjE3NTE5MDUwNzl9.dFFEhbVLM4KWjoFeEZFv2-wouVnhJiNvcT2YGvtTLmk
