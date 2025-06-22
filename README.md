@@ -73,4 +73,8 @@ Copy
 Edit
 cd meds-buddy-check
 npm install
+<<<<<<< HEAD
 npm start
+=======
+npm start
+>>>>>>> 8ea43357bd20efdd074da119637c53ad7544cfb6
